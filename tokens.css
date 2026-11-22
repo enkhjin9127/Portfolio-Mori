@@ -1,0 +1,67 @@
+/* Мөрөнгуа design system tokens, generated from the system's tokens.json.
+   Custom properties only (no classes, no @font-face: the pages load their own
+   fonts), so linking it changes nothing until a rule reads a token.
+   The reference: https://claude.ai/artifact/4hSM5YdfgCKTMqXRcgBctU */
+:root, [data-theme="night"] {
+  --night-000: #000000;
+  --night-100: #0a0907;
+  --night-200: #15131a;
+  --ivory-100: #efe7da;
+  --ivory-200: #b9ae9c;
+  --ivory-300: #8d8275;
+  --ivory-nav: rgba(239,231,218,.75);
+  --gold-500: #c4a464;
+  --gold-300: #d8c297;
+  --gold-200: #e4cf9f;
+  --gold-thread: rgba(196,164,100,.28);
+  --gold-rule: rgba(196,164,100,.22);
+  --gold-hairline: rgba(196,164,100,.14);
+  --paper-100: #f2ece1;
+  --paper-200: #f3eee4;
+  --paper-ink: #2b2118;
+  --paper-ink-2: #5f5446;
+  --paper-ink-3: #3a2e22;
+  --paper-gold: #9a7433;
+  --paper-rule: rgba(92,70,36,.22);
+  --plaque-ink: #4e3a1a;
+  --hero-cream: #f0e2c2;
+  --hero-tan: #c9976b;
+  --case-netpay-ground: #060d18;
+  --case-netpay-panel: #202b37;
+  --case-netpay-ink: #e9eef6;
+  --case-netpay-accent: #77a6d8;
+  --case-voice-ground: #080204;
+  --case-voice-panel: #0a0b10;
+  --case-voice-ink: #f6ecec;
+  --case-voice-accent: #d8c3c5;
+  --case-voice-signal: #e0707f;
+  --case-hub-ground: #0f0b1e;
+  --case-hub-panel: #191233;
+  --case-hub-ink: #ece9f7;
+  --case-hub-accent: #b49cf0;
+  --shadow-frame: 0 18px 44px rgba(0,0,0,.55), 0 2px 6px rgba(0,0,0,.4);
+  --shadow-frame-top: 0 26px 60px rgba(0,0,0,.65), 0 3px 10px rgba(0,0,0,.45);
+  --shadow-panel: 0 24px 60px -34px rgba(0,0,0,.8);
+  --shadow-lit: 0 0 0 5px rgba(196,164,100,.14), 0 0 18px rgba(216,194,151,.55);
+}
+:root {
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 24px;
+  --space-6: 32px;
+  --space-7: 48px;
+  --space-8: 64px;
+  --space-9: 96px;
+  --space-10: 120px;
+  --radius-scoop: 5px;
+  --radius-frame-sm: 10px;
+  --radius-frame: 12px;
+  --radius-card: 16px;
+  --radius-pill: 999px;
+  --font-display: 'Source Serif 4', Georgia, serif;
+  --font-text: GIP, 'Source Serif 4', Georgia, serif;
+  --font-label: 'Golos Text', system-ui, sans-serif;
+  --font-bichig: 'Noto Sans Mongolian', 'Source Serif 4', serif;
+}

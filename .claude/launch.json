@@ -4,6 +4,12 @@
     {
       "name": "portfolio",
       "url": "http://localhost:4173"
+    },
+    {
+      "name": "portfolio-node",
+      "runtimeExecutable": "node",
+      "runtimeArgs": ["serve.mjs"],
+      "port": 4173
     }
   ]
 }

@@ -202,11 +202,11 @@
       cover.setAttribute("height", H); cover.setAttribute("fill", "#000");
       var glow = document.createElementNS(NS, "path");
       glow.setAttribute("fill", "none"); glow.setAttribute("stroke-width", "3");
-      glow.setAttribute("stroke", lit ? "rgba(216,173,92,.45)" : "rgba(216,173,92,.12)");
+      glow.setAttribute("stroke", lit ? "rgba(228,207,159,.45)" : "rgba(196,164,100,.1)");
       glow.style.filter = "blur(3px)";
       var path = document.createElementNS(NS, "path");
-      path.setAttribute("fill", "none"); path.setAttribute("stroke-width", "1");
-      path.setAttribute("stroke", lit ? "rgba(216,173,92,.9)" : "rgba(216,173,92,.2)");
+      path.setAttribute("fill", "none"); path.setAttribute("stroke-width", "1.2");
+      path.setAttribute("stroke", lit ? "#e4cf9f" : "rgba(196,164,100,.28)");
       svg.appendChild(cover); svg.appendChild(glow); svg.appendChild(path);
       xp.appendChild(svg);
 
@@ -230,10 +230,8 @@
 
     [].forEach.call(xp.querySelectorAll(".xp-item"), function (item) {
       var card = item.querySelector(".xp-card"), dot = item.querySelector(".xp-dot");
-      var sheen = document.createElement("div");
-      sheen.className = "idc-sheen";
-      sheen.setAttribute("aria-hidden", "true");
-      card.appendChild(sheen);
+      /* no hover tilt and no sheen since 2026-11-21 (owner: "remove 3d
+         trigger and glaze effect"); the drag and the strike stay */
       card.classList.add("is-draggable");
 
       var K = 0.06, DAMP = 0.82, REACH = 260;
@@ -254,9 +252,7 @@
           }
           x = nx;
         }
-        card.style.transform = "translate3d(" + x.toFixed(2) + "px,0,0) rotateX(" +
-          rx.toFixed(3) + "deg) rotateY(" + ry.toFixed(3) + "deg)";
-        sheen.style.setProperty("--rake", (ry * 2.4).toFixed(2) + "%");
+        card.style.transform = "translate3d(" + x.toFixed(2) + "px,0,0)";
         if (!drag && Math.abs(x) < 0.05 && Math.abs(vx) < 0.05 &&
             Math.abs(tx - rx) < 0.01 && Math.abs(ty - ry) < 0.01) {
           running = false;
@@ -285,20 +281,6 @@
           wake();
           return;
         }
-        var r = card.getBoundingClientRect();
-        var px = (e.clientX - r.left) / r.width, py = (e.clientY - r.top) / r.height;
-        ty = (px - 0.5) * 2 * 8;
-        tx = (0.5 - py) * 2 * 5;
-        sheen.style.setProperty("--sx", (px * 100).toFixed(1) + "%");
-        sheen.style.setProperty("--sy", (py * 100).toFixed(1) + "%");
-        card.classList.add("is-lit");
-        wake();
-      });
-      card.addEventListener("pointerleave", function () {
-        if (drag) return;
-        tx = 0; ty = 0;
-        card.classList.remove("is-lit");
-        wake();
       });
       card.addEventListener("pointerdown", function (e) {
         if (e.button || e.pointerType !== "mouse" || e.target.closest("a")) return;
